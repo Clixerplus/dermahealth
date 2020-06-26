@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::view('/', 'store.home')->name('home');
+Route::view('/inicio', 'store.home')->name('home');
+Route::view('/articulo/{Product:slug?}', 'store.product')->name('product');
