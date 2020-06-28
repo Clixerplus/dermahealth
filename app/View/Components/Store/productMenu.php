@@ -1,11 +1,13 @@
 <?php
 
-namespace App\View\Components\Store;
+namespace App\View\Components\store;
 
 use Illuminate\View\Component;
+use App\Models\Product;
 
-class shopping-bag extends Component
+class productMenu extends Component
 {
+    public $products;
     /**
      * Create a new component instance.
      *
@@ -13,7 +15,7 @@ class shopping-bag extends Component
      */
     public function __construct()
     {
-        //
+        $this->products = Product::orderBy('name')->get();
     }
 
     /**
@@ -23,6 +25,6 @@ class shopping-bag extends Component
      */
     public function render()
     {
-        return view('components.store.shopping-bag');
+        return view('components.store.product-menu');
     }
 }

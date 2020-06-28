@@ -6,7 +6,7 @@
 
     <div class="product">
 
-        <x-store.product-showcase/>
+        @include('store.snippets.product-showcase')
         
     </div>
 

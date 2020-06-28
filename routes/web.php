@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'store.home')->name('home');
-Route::view('/inicio', 'store.home')->name('home');
-Route::view('/articulo/{Product:slug?}', 'store.product')->name('product');
+Route::get('/', 'Store\HomePageController')->name('home');
+Route::get('/inicio', 'Store\HomePageController')->name('home');
+Route::get('/articulo/{product:slug?}', 'Store\ProductPageController')->name('product');
 Route::view('/checkout', 'store.checkout')->name('checkout');
 Route::view('/checkout/confirm', 'store.confirm')->name('checkout-confirm');
 Route::view('/pago', 'store.payment')->name('payment');

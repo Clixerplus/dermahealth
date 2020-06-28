@@ -31,9 +31,7 @@
 								<b class="caret"></b>
 								<span class="arrow top"></span>
 							</a>
-							<div class="dropdown-menu">
-								<a class="dropdown-item" href="{{ route('product', $product->slug ?? 'slug') }}">Nutricell</a>
-							</div>
+							<x-store.product-menu/>
 						</li>
 						<li class="{{ active('payment') }}">
 							<a href="{{ route('payment') }}">Pagos</a>
