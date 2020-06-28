@@ -3,7 +3,7 @@
 $black:       #000000 !default;
 $blue:        #348fe2 !default;
 $cyan:        #49b6d6 !default;
-$dark:        #53d2dc !default;
+$dark:        #26648e !default;
 $dark-darker: #26648e !default;
 $green:       #32a932 !default;
 $indigo:      #8753de !default;
@@ -58,7 +58,7 @@ $theme-colors: (
 	'lime': $lime,
 	'aqua': $cyan
 );
-$primary-color:    'indigo' !default;
+$primary-color:    'palette-3' !default;
 $primary:          map-get($colors, $primary-color) !default;
 $success:          $green !default;
 $warning:          $orange !default;
