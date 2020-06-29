@@ -48,9 +48,9 @@
 				<span class="discount">{{ $product->formatedPriceBy('VES') }}</span>
 			</div> --}}
 			<div class="product-price">
-				<div class="price">{{ $product->formatedPriceBy('VES') }}</div>
+				<div class="price">{{ priceFormated($product->price) }}</div>
 			</div>
-			<a href="checkout_cart.html" class="btn btn-inverse btn-theme btn-lg width-200">AGREGAR AL CARRITO</a>
+			<button id="addItemBtn" onclick="addItemCart('{{ route('addItemCart', $product->ref) }}','{{ route('checkout') }}')" class="btn btn-inverse btn-theme btn-lg width-300">AGREGAR AL CARRITO</button>
 		</div>
 
 	</div>

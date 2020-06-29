@@ -3,9 +3,15 @@
 namespace App\View\Components\Store;
 
 use Illuminate\View\Component;
+use App\Models\Product;
+use Cart;
 
 class shoppingBag extends Component
 {
+    public $cart;
+    
+    public $clase;
+
     /**
      * Create a new component instance.
      *
@@ -13,7 +19,9 @@ class shoppingBag extends Component
      */
     public function __construct()
     {
-        //
+        $this->cart = Cart::instance();
+
+        $this->clase = Cart::count() > 0 ? 'btn-orange' : 'btn-default disabled';
     }
 
     /**

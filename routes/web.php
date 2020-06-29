@@ -20,3 +20,6 @@ Route::view('/checkout', 'store.checkout')->name('checkout');
 Route::view('/checkout/confirm', 'store.confirm')->name('checkout-confirm');
 Route::view('/pago', 'store.payment')->name('payment');
 Route::view('/contacto', 'store.contact')->name('contact');
+
+Route::get('/cart/{product:ref}/add', 'Store\CartController@addItem')->name('addItemCart');
+Route::get('/cart/{rowId}/remove', 'Store\CartController@removeItem')->name('removeItemCart');

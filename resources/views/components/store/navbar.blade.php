@@ -40,10 +40,26 @@
 				</div>
 			</div>
 
-			<x-store.shopping-bag/>
+			<div class="header-nav">
+				<ul class="nav pull-right">
 
+					<x-store.shopping-bag/>
+
+					<li class="divider"></li>
+
+					<li>
+						<a href="my_account.html">
+							@auth
+								<img src="{{ asset ('nutricell/user/user-1.jpg') }}" class="user-img" alt="" />
+							@else                
+								<img src="{{ asset ('nutricell/user/user-2.jpg') }}" class="user-img d-xl-none" alt="" />
+								<span class="d-none d-xl-inline">Login / Registrar</span>
+							@endauth
+						</a>
+					</li>
+				</ul>
+			</div>
+			
 		</div>
-
 	</div>
-
 </div>

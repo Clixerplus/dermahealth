@@ -35,7 +35,7 @@
 						</div>
 						<div class="info">
 							<h4 class="info-title">{{ $product->name ?? 'Product Name' }}</h4>
-							<div class="price">{{ $product->formatedPriceBy('VES') ?? '0.00' }}</div>
+							<div class="price">{{ priceFormated($product->price) ?? '0.00' }}</div>
 						</div>
 							
 					</li>					

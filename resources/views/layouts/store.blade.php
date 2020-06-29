@@ -37,14 +37,16 @@
 @section('main_css_files')
 
     <link href="{{ asset ('css/ui.min.css') }}" rel="stylesheet" />
-    <link href="{{ asset ('css/nutricell.min.css') }}" rel="stylesheet" />
+	<link href="{{ asset ('css/dermahealth.min.css') }}" rel="stylesheet" />
 	@yield('css_files')
 	
 @endsection
 
 @section('main_js_files')
 	
-	<script src="{{ asset ('js/nutricell.min.js') }}"></script>
+	<script src="{{ asset ('js/dermahealth.min.js') }}"></script>
+	<script src="{{ asset ('js/sweetalert2.all.min.js') }}"></script>
 	@yield('js_files')
 	
+	@yield('js_scrits')
 @endsection
