@@ -43,9 +43,11 @@
 @endsection
 
 @section('main_js_files')
-	
+	<script src="{{ asset ('js/dermahealth-app.js') }}"></script>
 	<script src="{{ asset ('js/dermahealth.min.js') }}"></script>
 	<script src="{{ asset ('js/sweetalert2.all.min.js') }}"></script>
+	
+	
 	@yield('js_files')
 	
 	@yield('js_scrits')

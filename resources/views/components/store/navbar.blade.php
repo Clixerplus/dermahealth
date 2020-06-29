@@ -13,7 +13,7 @@
 					<span class="brand-logo"></span>
 					<span class="brand-text">
 						<span class="text-blue">Dermahealth
-						<small>de Venezuela</small>
+						<small>de Venezuela</small></span>
 					</span>
 				</a>
 			</div>

@@ -8,8 +8,8 @@
         <div class="cart-header">
             <h4 class="cart-title">Carrito de compras (<span class="cart-count">{{ $cart->count() ?? '0' }}</span>)</h4>
         </div>
-        <div class="cart-body">
-            <ul class="cart-item">
+        <div id="app" class="cart-body">
+           {{--<ul id="cart-item" class="cart-item">
                 @if ( $cart->count() > 0)
                     @foreach ($cart->content() as $item)
                     <li>
@@ -32,7 +32,8 @@
                     </div>
                 </li>
                 @endif
-            </ul>
+            </ul>--}}
+           <shopping-cart></shopping-cart>
         </div>
         <div class="cart-footer">
             <div class="row row-space-10">                        

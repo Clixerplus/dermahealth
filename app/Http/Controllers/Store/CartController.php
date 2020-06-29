@@ -12,7 +12,23 @@ class CartController extends Controller
     
     public function getContent()
     {
-        return Cart::content();
+        $cart['count'] = count(Cart::content());
+        if ($cart['count']==0)
+            return 0;
+
+        $count=0;
+        foreach (Cart::content() as $item) {
+            $count++;
+            $cart['content'][] = [
+                'name'   => $item->name,
+                'image'  => asset('img/product/thumbnails/' . $item->options->image),
+                'price'  => priceFormated($item->price),
+                'remove' => route('removeItemCart', $item->rowId),
+            ];
+            if ($count == 3)
+                break;
+        }
+        return response()->json($cart);
     }
     
     public function addItem(Product $product)
