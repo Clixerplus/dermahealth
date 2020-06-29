@@ -11,5 +11,4 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.sass('resources/sass/dermahealth/styles.scss', 'public/css/nutricell.min.css');
-
+mix.js('resources/js/app.js', 'public/js/dermahealth-app.js');
