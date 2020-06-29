@@ -28,15 +28,18 @@
 			<div class="col-lg-3">
 				<h4 class="footer-header">NUEVO</h4>
 				<ul class="list-unstyled list-product mb-lg-4 mb-0">
+					@foreach ($products as $product)
 					<li>
 						<div class="image">
-							<img src="{{ asset ('nutricell/product/product-iphone-6s.jpg') }}" alt="" />
+							<img src="{{ asset('img/product/thumbnails/' . $product->image ?? 'img') }}" alt="{{ $product->name ?? 'name' }}"/>
 						</div>
 						<div class="info">
-							<h4 class="info-title">Iphone 6s</h4>
-							<div class="price">$1200.00</div>
+							<h4 class="info-title">{{ $product->name ?? 'Product Name' }}</h4>
+							<div class="price">{{ $product->formatedPriceBy('VES') ?? '0.00' }}</div>
 						</div>
+							
 					</li>					
+					@endforeach
 				</ul>
 			</div>
 			
