@@ -17,12 +17,11 @@
     }
 </style>
 @endsection
-
 @section('content')
 <div class="section-container">    
     <div class="container">        
         <div class="checkout">            
-            <form action="{{ route('checkout-confirm') }}" method="{{-- POST --}}" name="form_checkout">
+            <form action="{{ route('checkout-confirm') }}" method="POST" name="form_checkout">
                 @csrf
                 <div class="checkout-header">
                     
@@ -117,3 +116,9 @@
 </script>
 
 @endsection
+
+@section('top-navbar')@show
+@section('navbar')@show
+@section('main-banner')@show
+@section('footer')@show
+@section('copy')@show

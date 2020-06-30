@@ -3,7 +3,7 @@
     <div class="form-group row">
         <label class="col-md-4 col-form-label text-lg-right">Método de pago <span class="text-danger">*</span></label>
         <div class="col-md-4">
-            <input type="text" class="form-control required" name="cardholder" placeholder="Transferencia banca nacional" disabled />
+            <input type="text" class="form-control required"  placeholder="Transferencia banca nacional" disabled />
         </div>
     </div>
    
@@ -16,7 +16,7 @@
                 <li><a href="#" data-click="set-payment" data-value="Master Card" data-toggle="tooltip" data-title="Master Card" data-placement="top" data-trigger="hover"><i class="fab fa-cc-mastercard"></i></a></li>
                 <li><a href="#" data-click="set-payment" data-value="Credit Card" data-toggle="tooltip" data-title="Credit Card" data-placement="top" data-trigger="hover"><i class="fab fa-cc-discover"></i></a></li>
             </ul>
-            <input type="hidden" name="payment_type" value="" data-id="payment-type" />
+            <input type="hidden" name="method_payment" value="0" />
         </div>
     </div>
    

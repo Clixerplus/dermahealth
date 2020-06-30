@@ -4,7 +4,7 @@
         Nombres <span class="text-danger">*</span>
         </label>
         <div class="col-md-4">
-            <input type="text" class="form-control" name="first_name" value="{{ old('name') }}" required />
+            <input type="text" class="form-control" name="name" value="{{ old('name') }}" required />
         </div>
     </div>
     <div class="form-group row">
@@ -12,7 +12,7 @@
         Apellidos <span class="text-danger">*</span>
         </label>
         <div class="col-md-4">
-            <input type="text" class="form-control" name="last_name" value="{{ old('last_name') }}" required />
+            <input type="text" class="form-control" name="lastname" value="{{ old('lastname') }}" required />
         </div>
     </div>
     <div class="form-group row">

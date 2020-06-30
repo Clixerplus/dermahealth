@@ -54,15 +54,6 @@ class Product extends Model
         $this->attributes['slug'] = Str::slug(Str::lower($value));
     }
 
-    public function formatedPriceBy($currency)
-    {
-        $currency = Currency::where('acronym',$currency)->first();
-        $sign    = $currency->sign;
-        $acronym = $currency->acronym;
-        $rate    = $currency->rate;
-        $price   = number_format($this->price * $rate,2,',','.');
-        return "{$acronym}({$sign}) {$price}";
-    }
 
     public function priceBy($currency)
     {
