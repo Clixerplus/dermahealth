@@ -23,7 +23,7 @@ class Order extends Model
 
     protected $fillable =[
 		  'name', 'lastname', 'ref', 'address', 'phone', 'email',
-		  'state', 'city' ,'method_payment'
+		  'state', 'city' ,'method_payment', 'status'
 	  ];
     
     public function products()

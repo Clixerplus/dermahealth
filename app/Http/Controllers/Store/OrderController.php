@@ -12,9 +12,15 @@ class OrderController extends Controller
 {
     public function __invoke(ShippingInfoRequest $request)
     {
+		
+		if(Cart::count() < 1)
+			return redirect()->back();
+		
 		$order = new Order;
 		$order->fill($request->except('_token'));
 		$order->generateOrder();
+		$order->status = 0; //Pending
+
 		$ref = $order->ref;
 		$total = Cart::total();
 		$content = Cart::content();

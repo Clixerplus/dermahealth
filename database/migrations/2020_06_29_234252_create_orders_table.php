@@ -24,6 +24,7 @@ class CreateOrdersTable extends Migration
             $table->string('state');
             $table->string('city');
             $table->unsignedSmallInteger('method_payment');
+            $table->unsignedSmallInteger('status'); // 0 = Pending, 1 = Paid, 9 = Expirada.
             $table->timestamps();
         });
     }

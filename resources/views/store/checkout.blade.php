@@ -28,7 +28,7 @@
                     <div class="row">
 
                         <div class="col-lg-3">
-                            <div id="checkout-cart-tab" class="step active">
+                            <div id="checkout-cart-tab" class="step @if(!$empty) active @endif">
                                 <a>
                                     <div class="number">1</div>
                                     <div class="info">
@@ -78,7 +78,17 @@
                     </div>
                     
                 </div>
-                
+                @if($empty)
+                <div id="checkout-cart" class="visible">
+                    <div class="checkout-body">
+                        <h1>NO EXISTEN ARTÍCULOS EN EL CARRITO</h1>
+                    </div>
+                    
+                    <div class="checkout-footer text-center">
+                        <a href="{{ route('home') }}" class="btn btn-white btn-lg pull-left btn-theme">VOLVER</a>
+                    </div>
+                </div>
+                @else
                 <div id="checkout-cart" class="visible">
                     @include('store.snippets.checkout-cart')
                 </div>
@@ -90,7 +100,7 @@
                 <div id="checkout-payment">
                     @include('store.snippets.checkout-payment')
                 </div>
-
+                @endif
             </form>
         </div>        
     </div>    

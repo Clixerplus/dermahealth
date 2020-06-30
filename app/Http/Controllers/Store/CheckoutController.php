@@ -10,7 +10,12 @@ class CheckoutController extends Controller
 {
     
     public function __invoke(){
-        $cart = Cart::instance();
-        return view('store.checkout', compact('cart'));
+        $empty = false;
+        $cart  = Cart::instance();
+        if (!$cart->count() > 0)
+            $empty = true;
+            
+        return view('store.checkout', compact('cart', 'empty'));
+            
     }
 }
