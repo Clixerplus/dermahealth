@@ -2,7 +2,7 @@
 
 @section('page_title', ' - Confirmación de compra')
 
-@section('content')
+@section('css_styles')
 <style>
     #checkout-cart,
     #checkout-info,
@@ -16,11 +16,14 @@
         display: block;
     }
 </style>
+@endsection
+
+@section('content')
 <div class="section-container">    
     <div class="container">        
         <div class="checkout">            
             <form action="{{ route('checkout-confirm') }}" method="{{-- POST --}}" name="form_checkout">
-                
+                @csrf
                 <div class="checkout-header">
                     
                     <div class="row">
@@ -30,8 +33,8 @@
                                 <a>
                                     <div class="number">1</div>
                                     <div class="info">
-                                        <div class="title">Delivery Options</div>
-                                        <div class="desc">Lorem ipsum dolor sit amet.</div>
+                                        <div class="title">Carrito</div>
+                                        <div class="desc">Artículos agregados.</div>
                                     </div>
                                 </a>
                             </div>
@@ -42,8 +45,8 @@
                                 <a>
                                     <div class="number">2</div>
                                     <div class="info">
-                                        <div class="title">Shipping Address</div>
-                                        <div class="desc">Vivamus eleifend euismod.</div>
+                                        <div class="title">Envío</div>
+                                        <div class="desc">Información de usuario.</div>
                                     </div>
                                 </a>
                             </div>
@@ -54,8 +57,8 @@
                                 <a>
                                     <div class="number">3</div>
                                     <div class="info">
-                                        <div class="title">Payment</div>
-                                        <div class="desc">Aenean ut pretium ipsum. </div>
+                                        <div class="title">Pago</div>
+                                        <div class="desc">Eliga metodo de pago. </div>
                                     </div>
                                 </a>
                             </div>
@@ -66,8 +69,8 @@
                                 <a>
                                     <div class="number">4</div>
                                     <div class="info">
-                                        <div class="title">Complete Payment</div>
-                                        <div class="desc">Curabitur interdum libero.</div>
+                                        <div class="title">Confirmación</div>
+                                        <div class="desc">Orden de compra completada.</div>
                                     </div>
                                 </a>
                             </div>

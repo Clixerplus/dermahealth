@@ -12,18 +12,19 @@ class CartController extends Controller
     
     public function getContent()
     {
-        $cart['count'] = count(Cart::content());
-        if ($cart['count']==0)
+        $cart['countItem'] = count(Cart::content());
+        if ($cart['countItem']==0)
             return 0;
 
-        $count=0;
+        $cart['count'] = Cart::count();
+        $count = 0;
         foreach (Cart::content() as $item) {
             $count++;
             $cart['content'][] = [
                 'name'   => $item->name,
                 'image'  => asset('img/product/thumbnails/' . $item->options->image),
                 'price'  => priceFormated($item->price),
-                'remove' => route('removeItemCart', $item->rowId),
+                'urlRemove' => route('removeItemCart', $item->rowId),
             ];
             if ($count == 3)
                 break;
@@ -35,7 +36,16 @@ class CartController extends Controller
     {
         //dd($product);
         Cart::add($product->ref, $product->name, 1, $product->price, ['image' => $product->image])->associate('App\Models\Product');
-        return ['count'=> Cart::count()];
+        return $this->getContent();
+    }
+
+    public function updateItem($rowId,$qty)
+    {
+        if (is_numeric($qty))
+        {
+            Cart::update($rowId, $qty);
+        }
+        return $this->getContent();
     }
 
     public function removeItem($rowId)

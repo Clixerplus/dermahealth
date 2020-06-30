@@ -40,10 +40,11 @@
 	<link href="{{ asset ('css/dermahealth.min.css') }}" rel="stylesheet" />
 	@yield('css_files')
 	
+	@yield('css_styles')
 @endsection
 
 @section('main_js_files')
-	<script src="{{ asset ('js/dermahealth-app.js') }}"></script>
+	<script src="{{ asset ('js/cart.js') }}"></script>
 	<script src="{{ asset ('js/dermahealth.min.js') }}"></script>
 	<script src="{{ asset ('js/sweetalert2.all.min.js') }}"></script>
 	

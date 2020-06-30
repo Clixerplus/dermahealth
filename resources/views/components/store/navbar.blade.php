@@ -1,4 +1,4 @@
-<div id="header" class="header">
+<div id="header" class="header" data-fixed-top="true">
 	<div class="container">
 		<div class="header-container">
 

@@ -1,83 +1,69 @@
 <div class="checkout-body">
     <div class="form-group row">
         <label class="col-form-label col-md-4 text-lg-right">
-        First Name <span class="text-danger">*</span>
+        Nombres <span class="text-danger">*</span>
         </label>
         <div class="col-md-4">
-            <input type="text" class="form-control" name="first_name" value="" placeholder="" />
+            <input type="text" class="form-control" name="first_name" value="{{ old('name') }}" required />
         </div>
     </div>
     <div class="form-group row">
         <label class="col-form-label col-md-4 text-lg-right">
-        Last Name <span class="text-danger">*</span>
+        Apellidos <span class="text-danger">*</span>
         </label>
         <div class="col-md-4">
-            <input type="text" class="form-control" name="last_name" value="" placeholder="" />
+            <input type="text" class="form-control" name="last_name" value="{{ old('last_name') }}" required />
         </div>
     </div>
     <div class="form-group row">
         <label class="col-form-label col-md-4 text-lg-right">
-        Company Name (optional)<span class="text-danger">&nbsp;</span>
+        Correo electrónico <span class="text-danger">*</span>
         </label>
-        <div class="col-md-8">
-            <input type="text" class="form-control" name="company_name" value="" placeholder="" />
+        <div class="col-md-4">
+            <input type="email" class="form-control" name="email" value="{{ old('email') }}" required />
         </div>
     </div>
     <div class="form-group row">
         <label class="col-form-label col-md-4 text-lg-right">
-        Area Code <span class="text-danger">*</span>
+        Teléfono <span class="text-danger">*</span>
         </label>
         <div class="col-md-4">
-            <input type="text" class="form-control" name="area_code" value="" placeholder="" />
+            <input type="phone" class="form-control" name="phone" value="{{ old('phone') }}" required />
         </div>
     </div>
     <div class="form-group row">
         <label class="col-form-label col-md-4 text-lg-right">
-        Primary Phone <span class="text-danger">*</span>
+        Dirección <span class="text-danger">*</span>
         </label>
         <div class="col-md-4">
-            <input type="text" class="form-control" name="primary_phone" value="" placeholder="" />
+            <input type="text" class="form-control m-b-10" name="address" value="{{ old('address') }}" required />
         </div>
     </div>
     <div class="form-group row">
         <label class="col-form-label col-md-4 text-lg-right">
-        Street Address <span class="text-danger">*</span>
+        Estado <span class="text-danger">*</span>
         </label>
         <div class="col-md-4">
-            <input type="text" class="form-control m-b-10" name="address_1" value="" placeholder="" />
-            <input type="text" class="form-control" name="address_2" value="" placeholder="" />
+            <input type="text" class="form-control m-b-10" name="state" value="{{ old('state') }}" required />
         </div>
     </div>
     <div class="form-group row">
         <label class="col-form-label col-md-4 text-lg-right">
-        ZIP Code<span class="text-danger">*</span>
+        Ciudad <span class="text-danger">*</span>
         </label>
         <div class="col-md-4">
-            <input type="text" class="form-control" name="zip_code" value="" placeholder="" />
-            <p class="form-text m-b-0 f-s-12 text-muted f-w-600 m-t-10">Enter ZIP for City and State ZIP Code</p>
+            <input type="text" class="form-control m-b-10" name="city" value="{{ old('city') }}" required />
         </div>
     </div>
-    <div class="form-group row">
-        <label class="col-form-label col-md-4">
-        &nbsp;
-        </label>
-        <div class="col-md-4">
-            <label class="f-w-500">
-            <input type="checkbox" name="business_address" value="1" />
-            This is a business address
-            <a href="#" class="m-l-5 text-muted" data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="This helps us choose the best shipping method for you. Business shipments are normally delivered on weekdays by 5:00 p.m. local time. Residential shipments are normally delivered Monday - Saturday by 8:00 p.m. local time.">
-            <i class="fa fa-question-circle"></i>
-            </a>
-            </label>
-        </div>
-    </div>
+
     <hr />
-    <div class="m-b-5"><b>Shipping Policy</b></div>
+
+    <div class="m-b-5"><b>Condiciones de envío</b></div>
     <ul class="checkout-info-list">
-        <li>Signature may be required for delivery</li>
-        <li>We do not ship to P.O. boxes</li>
-        <li>Delivery estimates below include item preparation and shipping time</li>
-        <li>We do not ship directly to APO/FPO addresses.</li>
+        <li>Los envío se realizarán mediante compañías nacionles.</li>
+        <li>No existe seguro ni reembolsos por extravío o perdida en el envío.</li>
+        <li>Los tiempos de entrega dependerán de las compañías de envío.</li>
+        
     </ul>
 </div>
 

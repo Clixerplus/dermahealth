@@ -9,31 +9,7 @@
             <h4 class="cart-title">Carrito de compras (<span class="cart-count">{{ $cart->count() ?? '0' }}</span>)</h4>
         </div>
         <div id="app" class="cart-body">
-           {{--<ul id="cart-item" class="cart-item">
-                @if ( $cart->count() > 0)
-                    @foreach ($cart->content() as $item)
-                    <li>
-                        <div class="cart-item-image">
-                            <img src="{{ asset('img/product/thumbnails/' . $item->options->image ?? 'img') }}" alt="{{ $item->name ?? 'name' }}"/>
-                        </div>
-                        <div class="cart-item-info">
-                            <h4>{{ $item->name ?? 'Item name' }}</h4>
-                            <p class="price">{{ priceFormated($item->price) ?? '0.00' }}</p>
-                        </div>
-                        <div class="cart-item-close">
-                            <a href="{{ route('removeItemCart', $item->rowId) }}" data-toggle="tooltip" data-title="Remove">&times;</a>
-                        </div>
-                    </li>                            
-                    @endforeach
-                @else
-                <li>
-                    <div class="cart-item-info">
-                        <h4>No hay artículos</h4>
-                    </div>
-                </li>
-                @endif
-            </ul>--}}
-           <shopping-cart></shopping-cart>
+           <ul id="cart-list" class="cart-item"></ul>
         </div>
         <div class="cart-footer">
             <div class="row row-space-10">                        
@@ -45,4 +21,8 @@
     </div>
 </li>
 
-        
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        getContentCartList('{{ route("getContentCart") }}');
+    });
+</script>

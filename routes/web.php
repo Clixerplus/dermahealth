@@ -17,13 +17,14 @@ Auth::routes();
 Route::get('/', 'Store\HomePageController')->name('home');
 Route::get('/inicio', 'Store\HomePageController')->name('home');
 Route::get('/articulo/{product:slug?}', 'Store\ProductPageController')->name('product');
-Route::view('/checkout', 'store.checkout')->name('checkout');
-Route::view('/checkout/confirm', 'store.confirm')->name('checkout-confirm');
+Route::get('/checkout', 'Store\CheckoutController')->name('checkout');
+Route::post('/checkout/confirm', 'Store\OrderController')->name('checkout-confirm');
 Route::view('/pago', 'store.payment')->name('payment');
 Route::view('/contacto', 'store.contact')->name('contact');
 
 Route::get('/cart/content', 'Store\CartController@getContent')->name('getContentCart');
 Route::get('/cart/{product:ref}/add', 'Store\CartController@addItem')->name('addItemCart');
+Route::get('/cart/{rowId}/update/{qty?}', 'Store\CartController@updateItem')->name('updateItemCart');
 Route::get('/cart/{rowId}/remove', 'Store\CartController@removeItem')->name('removeItemCart');
 
 //Route::get('/home', 'HomeController@index')->name('home');

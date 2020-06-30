@@ -18,24 +18,21 @@
 
 @section('js_scrits')
     <script>
-        const addItemCart = async (addUrl, confirmUrl) =>{
+
+        function addItem(url) {
             let btn = document.getElementById('addItemBtn');
             btn.disabled = true;
-      
-            try {
-                let resp = await fetch(addUrl)
-                const data = await resp.json()
+            if (addItemCart(url)) {
                 btn.disabled = false;
-                updateCart(data);
-                redirectCheckout(confirmUrl);
-
-            } catch {
-                Swal.fire('Hubo un error al intentar agregar el artículo', 'nose','error');
-            }       
-
+                askToCheckout('{{ route("checkout") }}');
+            }
+            else
+            {
+                Swal.fire('Error', 'No se pudo agregar el item', 'error');
+            }
         }
 
-        const redirectCheckout = confirmUrl => {
+        const askToCheckout = (url) => {
             let customStyleSwal = Swal.mixin({
                 customClass: {
                 confirmButton: 'btn btn-green my-2',
@@ -47,23 +44,15 @@
                 title: 'El artículo ha sido agregado',
                 text: "Puedes ir a confirmar tu compra o seguir disfrutando de nuestro contenido",
                 icon: 'success',
-                width: 275,
                 allowOutsideClick: false,
                 showCancelButton: true,
                 cancelButtonText: 'Seguir comprando <i class="fas fa-shopping-cart"></i>',
                 confirmButtonText: 'Verificar compra <i class="fas fa-check"></i>',
             }).then((result) => {
                 if (result.value) {
-                window.location = confirmUrl;
+                    window.location = url;
                 }
-            })
-        }
-        const updateCart = (response) => {
-            count = response.count
-            const cartCount = document.querySelectorAll('.cart-count')
-            cartCount.forEach((e)=>{e.textContent = count})
-
-
+            }) 
         }
     </script>
 @endsection

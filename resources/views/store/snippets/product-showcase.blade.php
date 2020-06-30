@@ -50,7 +50,7 @@
 			<div class="product-price">
 				<div class="price">{{ priceFormated($product->price) }}</div>
 			</div>
-			<button id="addItemBtn" onclick="addItemCart('{{ route('addItemCart', $product->ref) }}','{{ route('checkout') }}')" class="btn btn-inverse btn-theme btn-lg width-300">AGREGAR AL CARRITO</button>
+			<button id="addItemBtn" onclick="addItem('{{ route('addItemCart', $product->ref) }}')" class="btn btn-inverse btn-theme btn-lg width-300">AGREGAR AL CARRITO</button>
 		</div>
 
 	</div>
