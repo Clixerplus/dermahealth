@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Store\ShippingInfoRequest;
 use App\Models\Order;
 use App\Models\Product;
+use App\Models\Currency;
 use Cart;
 
 class OrderController extends Controller
@@ -15,16 +16,9 @@ class OrderController extends Controller
 		
 		if(Cart::count() < 1)
 			return redirect()->back();
-		
-		$order = new Order;
-		$order->fill($request->except('_token'));
-		$order->generateOrder();
-		$order->status = 0; //Pending
 
-		$ref = $order->ref;
-		$total = Cart::total();
+		$order = Order::generateOrder($request->except('_token', 'qty'));
 		$content = Cart::content();
-		
     	foreach ($content as $item) {
     		$product = Product::findOrfail($item->id);
     		$order->products()->save($product, [
@@ -32,12 +26,13 @@ class OrderController extends Controller
 				'price' 	=> $item->price,
     		]);
 		}
-		$order->save();
 		Cart::destroy();
 		
     	//NewOrder Notification
     	//DetailUserOrder
     	
-        return view('store.confirm', compact('order', 'content', 'ref','total'));
-    }
+        return view('store.confirm', compact('order', 'content'));
+	}
+	
+	
 }

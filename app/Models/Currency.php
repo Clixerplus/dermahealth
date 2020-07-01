@@ -9,4 +9,5 @@ class Currency extends Model
     protected $fillable = [
     	'name', 'sign', 'rate', 'acronym'
     ];
+
 }

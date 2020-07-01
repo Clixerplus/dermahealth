@@ -76,7 +76,7 @@
 								</tr>
 								<tr>
 									<td class="field">Número de referencia</td>
-									<td class="value">{{ $ref }}</td>
+									<td class="value">{{ $order->ref }}</td>
 								</tr>
 								<tr>
 									<td class="field">Contacto</td>
@@ -102,7 +102,7 @@
 								</tr>
 								<tr>
 									<td class="field">Monto Total</td>
-									<td class="value">{{ priceFormated($total) }}</td>
+									<td class="value">{{ priceFormated($order->amount) }}</td>
 								</tr>
 							</tbody>
 						</table>

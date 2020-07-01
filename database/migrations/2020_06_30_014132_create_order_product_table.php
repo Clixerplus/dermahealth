@@ -15,7 +15,7 @@ class CreateOrderProductTable extends Migration
     {
         Schema::create('order_product', function (Blueprint $table) {
             $table->string('product_ref');
-            $table->string('order_ref');
+            $table->uuid('order_ref');
             $table->primary(['product_ref','order_ref']);
             $table->unsignedSmallInteger('quantity')->default(0);
             $table->unsignedFloat('price')->default(0);

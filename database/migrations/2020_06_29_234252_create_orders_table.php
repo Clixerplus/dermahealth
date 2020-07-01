@@ -14,8 +14,7 @@ class CreateOrdersTable extends Migration
     public function up()
     {
         Schema::create('orders', function (Blueprint $table) {
-            $table->string('ref',36);
-            $table->primary('ref');
+            $table->uuid('ref')->primary();
             $table->string('name')->nullable();
             $table->string('lastname')->nullable();
             $table->string('email');
@@ -23,8 +22,11 @@ class CreateOrdersTable extends Migration
             $table->string('address');
             $table->string('state');
             $table->string('city');
+            $table->decimal('amount')->default(0);
+            $table->string('currency',3);
+            $table->decimal('rate');
             $table->unsignedSmallInteger('method_payment');
-            $table->unsignedSmallInteger('status'); // 0 = Pending, 1 = Paid, 9 = Expirada.
+            $table->unsignedSmallInteger('status')->default(0); // 0 = Pending, 1 = Paid, 9 = Expirada.
             $table->timestamps();
         });
     }

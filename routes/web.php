@@ -19,7 +19,9 @@ Route::get('/inicio', 'Store\HomePageController')->name('home');
 Route::get('/articulo/{product:slug?}', 'Store\ProductPageController')->name('product');
 Route::get('/checkout', 'Store\CheckoutController')->name('checkout');
 Route::post('/checkout/confirm', 'Store\OrderController')->name('checkout-confirm');
-Route::view('/pago', 'store.payment')->name('payment');
+Route::post('/pagos/guardar', 'Store\PaymentController@store')->name('payment-store');
+Route::view('/pagos/buscar', 'store.payment')->name('payment');
+Route::get('/pagos/registrar/{ref?}', 'Store\PaymentController@register')->name('payment-register');
 Route::view('/contacto', 'store.contact')->name('contact');
 
 Route::get('/cart/content', 'Store\CartController@getContent')->name('getContentCart');
