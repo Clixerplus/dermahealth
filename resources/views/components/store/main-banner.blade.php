@@ -4,7 +4,7 @@
         
         <div class="carousel-inner">
         
-            <div class="carousel-item active" data-paroller="true" data-paroller-factor="0.3" data-paroller-factor-sm="0.01" data-paroller-factor-xs="0.01" style="background: url({{ asset ('img/bg/banner-1.jpg') }}) center 0 / cover no-repeat;">
+            <div class="carousel-item active" data-paroller="true" data-paroller-factor="0.3" data-paroller-factor-sm="0.01" data-paroller-factor-xs="0.01" style="background: url({{ asset ('img/banner/banner-1.jpg') }}) center 0 / contain no-repeat;">
                 <div class="container">
                     <img src="{{ asset ('nutricell/slider/slider-1-product.png') }}" class="product-img right bottom fadeInRight animated" alt="" />
                 </div>
@@ -18,7 +18,7 @@
                 </div>
             </div>
         
-            <div class="carousel-item" data-paroller="true" data-paroller-factor="-0.3" data-paroller-factor-sm="0.01" data-paroller-factor-xs="0.01" style="background: url({{ asset ('nutricell/slider/slider-2-cover.jpg') }}) center 0 / cover no-repeat;">
+            <div class="carousel-item" data-paroller="true" data-paroller-factor="-0.3" data-paroller-factor-sm="0.01" data-paroller-factor-xs="0.01" style="background: url({{ asset ('img/banner/banner-2.jpg') }}) center 0 / contain no-repeat;">
                 <div class="container">
                     <img src="{{ asset ('nutricell/slider/slider-2-product.png') }}" class="product-img left bottom fadeInLeft animated" alt="" />
                 </div>
@@ -32,7 +32,7 @@
                 </div>
             </div>
         
-            <div class="carousel-item" data-paroller="true" data-paroller-factor="-0.3" data-paroller-factor-sm="0.01" data-paroller-factor-xs="0.01" style="background: url({{ asset ('nutricell/slider/slider-3-cover.jpg') }}) center 0 / cover no-repeat;">
+            <div class="carousel-item" data-paroller="true" data-paroller-factor="-0.3" data-paroller-factor-sm="0.01" data-paroller-factor-xs="0.01" style="background: url({{ asset ('img/banner/banner-3.jpg') }}) center 0 / contain no-repeat;">
                 <div class="carousel-caption">
                     <div class="container">
                         <h3 class="title m-b-5 fadeInDownBig animated">Macbook Air</h3>
